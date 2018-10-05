@@ -9,7 +9,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="img__mask">
-                    <img src="img/header_slider/bedroom.jpg" alt="First slide">
+                    <img src="{$config.templates_dir}/img/header_slider/bedroom.jpg" alt="First slide">
                 </div>
                 <div class="carousel-caption">
                     <h2>Ексклюзивні меблі на замовлення у місті Рівне</h2>
@@ -19,7 +19,7 @@
             </div>
             <div class="carousel-item">
                 <div class="img__mask">
-                    <img src="img/header_slider/kitchen.jpg" alt="Second slide">
+                    <img src="{$config.templates_dir}/img/header_slider/kitchen.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-caption">
                     <h2>Сучасні рішення для Вашої кухні</h2>
@@ -29,7 +29,7 @@
             </div>
             <div class="carousel-item">
                 <div class="img__mask">
-                    <img src="img/header_slider/nursery.jpg" alt="Third slide">
+                    <img src="{$config.templates_dir}/img/header_slider/nursery.jpg" alt="Third slide">
                 </div>
                 <div class="carousel-caption">
                     <h2>Меблі для дитячої кімнати</h2>
@@ -39,7 +39,7 @@
             </div>
             <div class="carousel-item">
                 <div class="img__mask">
-                    <img src="img/header_slider/сupboard.jpg" alt="Fourth slide">
+                    <img src="{$config.templates_dir}/img/header_slider/сupboard.jpg" alt="Fourth slide">
                 </div>
                 <div class="carousel-caption">
                     <h2>Шафи купе з дизайнерським оформленням</h2>

@@ -25,7 +25,7 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('styles', function() {
-	return gulp.src(syntax+'/**/*.'+syntax+'')
+	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
 	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
 	.pipe(autoprefixer(['last 15 versions']))
@@ -36,6 +36,7 @@ gulp.task('styles', function() {
 
 gulp.task('js', function() {
 	return gulp.src([
+		'libs/jquery/jquery-3.3.1.min.js',
 		'libs/owlCarousel/dist/owl.carousel.min.js',
 		'templates/js/common.js', // Always at the end
 		])

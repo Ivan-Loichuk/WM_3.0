@@ -17,7 +17,25 @@ class Image
             exit;
         }
 
+        $result = $this->groupImages($result);
+
         return $result;
+    }
+    function groupImages($result){
+        $i = 0;
+        $index = 0;
+        $group_result = null;
+        foreach ($result as $image){
+            if($i == 3){
+                $index++;
+                $i = 0;
+            }else{
+                $group_result[$index][] = $image;
+                $i++;
+            }
+        }
+
+        return $group_result;
     }
     function addImage( $data ){
         $errors = null;

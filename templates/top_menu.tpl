@@ -2,7 +2,7 @@
     <nav class="navscroll navbar fixed-top navbar-expand-md navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="img/logo.png" width="145" height="50" alt="">
+                <img src="{$config.templates_dir}/img/logo.png" width="145" height="50" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

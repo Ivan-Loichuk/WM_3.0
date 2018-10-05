@@ -11,7 +11,7 @@
             'kitchen' => 1,
             'bedroom' => 2,
             'children' => 3,
-            'other' => 4,
+            'others' => 4,
             'office' => 5,
             'mattresses' => 6
         );

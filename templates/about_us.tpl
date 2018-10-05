@@ -10,7 +10,7 @@
     </div> <!-- end title-row -->
     <div class="row">
         <div class="col-lg-5">
-            <img src="img/about.png" alt="alt" class="about__img">
+            <img src="{$config.templates_dir}/img/about.png" alt="alt" class="about__img">
         </div>
         <div class="col-lg-7">
             <div class="about__block">
