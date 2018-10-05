@@ -1,0 +1,6 @@
+@import "_mixins/font-face";
+
+@include font-face("opensans-example", "../fonts/OpenSansRegular/OpenSansRegular");
+@include font-face("opensans-example", "../fonts/OpenSansBold/OpenSansBold", bold);
+@include font-face("opensans-example", "../fonts/OpenSansLight/OpenSansLight", light);
+@include font-face("opensans-example", "../fonts/OpenSansSemiBold/OpenSansSemiBold", semibold);

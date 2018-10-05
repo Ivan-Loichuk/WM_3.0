@@ -1,0 +1,15 @@
+User-agent: *
+
+Disallow: /html/
+
+Allow: /php/
+Allow: /sitemap.xml
+Allow: /languages/
+Allow: /img/
+Allow: /css/
+Crawl-delay: 10
+
+
+Sitemap: http://west-mebli.com.ua/sitemap.xml
+
+

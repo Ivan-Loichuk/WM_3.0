@@ -1,0 +1,138 @@
+@import 'vars';
+/*==========  Desktop First  ==========*/
+// ≥1200px
+@include media-breakpoint-down(lg)
+{
+}
+// ≥992px
+@include media-breakpoint-down(md)
+{
+    /*menu*/
+    .right__contact
+    {
+        font-size: 10px;
+    }
+
+    /*contacts*/
+    .callback {
+    margin-left: 0;
+    }
+
+    /*footer*/
+    .footer__catalog {
+      padding-bottom: 10px;
+    }
+    .footer__navigation {
+    padding-left: 0;
+    }
+    .footer__contacts {
+    padding-left: 80px;
+    }
+
+    /*gallery page*/
+    .category-wrap {
+    width: 180px;
+    }
+}
+// ≥768px
+@include media-breakpoint-down(sm)
+{
+    /*menu*/
+    .right__contact
+    {
+        display: none;
+    }
+
+    /*footer*/
+    .footer__about {
+    padding-bottom: 10px;
+    }
+    .footer__catalog {
+    padding-left: 0;
+    }
+    .footer__contacts {
+    padding-left: 0;
+    }
+    /*gallery page*/
+    .category-wrap {
+    margin-bottom: 20px;
+    width: 220px;
+    text-align: center;
+    margin-left: 25%;
+    }
+    .links {
+    justify-content: center;
+    }
+}
+// ≥576px
+@include media-breakpoint-down(xs)
+{
+    /*menu*/
+    .footer {
+    text-align: center;
+    }
+    .footer__contact-item {
+    justify-content: center;
+    }
+    .footer__contact-links {
+    justify-content: center;
+    }
+
+    /*header carousel*/
+    .carousel-caption
+    {
+    top: 30%;
+    h2
+    {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    p
+    {
+        font-size: 12px;
+    }
+    }
+
+    .header__btn
+    {
+    font-weight: 600;
+
+    display: inline-block;
+
+    padding: 10px;
+
+    letter-spacing: 0;
+    text-transform: uppercase;
+
+    color: $light;
+    border: 2px solid $light;
+    border-radius: 4px;
+    background: transparent;
+    &:hover
+    {
+        transition: all .3s ease;
+        text-decoration: none;
+
+        color: $light;
+        border-color: $button-border;
+        background: $button;
+    }
+}
+}
+/*==========  Mobile First  ==========*/
+// ≤576px
+@include media-breakpoint-up(sm)
+{
+}
+// ≤768px
+@include media-breakpoint-up(md)
+{
+}
+// ≤992px
+@include media-breakpoint-up(lg)
+{
+}
+// ≤1200px
+@include media-breakpoint-up(xl)
+{
+}

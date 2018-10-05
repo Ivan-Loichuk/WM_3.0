@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName "/www/west-mebli.com.ua/configure"
+AuthUserFile /var/www/ivan_loichuk1/data/etc/45613838.passwd
+<Limit GET POST>
+	require valid-user
+</Limit>
