@@ -67,14 +67,67 @@
                     Зворотній дзвінок
                 </h3>
                 <p class="callback_text">Залишіть свої дані й ми зв'яжемося з Вами</p>
-                <form action="#" class="callback__form" id="callback__form">
-                    <input type="text" class="callback__input" name="name" placeholder="Ваше ім'я">
-                    <input type="text" class="callback__input" name="email" placeholder="Ваш електронний адрес">
-                    <input type="text" class="callback__input" name="phone" placeholder="Ваш телефон">
+                <form class="callback__form" id="callback__form" >
+                    <input type="text" class="callback__input" name="user_name" placeholder="Ваше ім'я">
+                    <input type="text" class="callback__input" name="user_email" placeholder="Ваш електронний адрес">
+                    <input type="text" class="callback__input" name="user_number" placeholder="Ваш телефон">
                     <textarea class="callback__area" name="message" placeholder="Повідомлення.."></textarea>
-                    <button type="submit" class="button__act">Замовити дзвінок</button>
+                    <span class="error" id="err_message"></span>
+                    <span class="success" id="success_msg"></span>
+                    <button type="submit" class="button__act" id="send_btn">Замовити дзвінок</button>
                 </form>
+
             </div> <!-- end callback -->
         </div>
     </div> <!-- end content-row -->
 </div> <!-- end container -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+            send to server
+        */
+        $('#send_btn').click(function (e) {
+            e.preventDefault();
+
+            var email = $('#callback__form input[name=user_email]');
+            var name = $('#callback__form input[name=user_name]');
+            var number = $('#callback__form input[name=user_number]');
+            var message = $('#callback__form textarea[name=message]');
+            $.ajax({
+                url:    	'index.php?p=send_message_async',
+                type:		'POST',
+                cache: 		false,
+                data: {
+                    'name':name.val(),
+                    'email':email.val(),
+                    'number': number.val() ,
+                    'message':message.val()
+                },
+                dataType:	'html',
+                beforeSend: function () {
+                    $('#send_btn').attr ("disabled", "disabled");
+                },
+                success: function(data) {
+                    if (data == "Повідомлення надіслано)<br>Ми з вами зв'жемося") {
+                        name.val ("");
+                        email.val ("");
+                        number.val("");
+                        message.val ("");
+                        $('#success_msg').html(data);
+                        $('#err_message').html("");
+                        email.css("border-color", "#A5B3B1");
+                        number.css("border-color", "#A5B3B1");
+                        name.css("border-color", "#A5B3B1");
+                        message.css("border-color", "#A5B3B1");
+                        $('#send_btn').attr("disabled", "disabled");
+                    } else {
+                        $('#err_message').html('<br>' + data);
+                        $('#send_btn').removeAttr("disabled");
+                    }
+                }
+            });
+        });
+    });
+
+</script>

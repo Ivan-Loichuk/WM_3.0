@@ -2,7 +2,6 @@
 include_once "configure/db.php";
 include_once "classes/Trait_category_list.php";
 include_once 'classes/Watermark.php';
-include_once 'languages/lang_ua.php';
 
 class Image
 {
@@ -52,7 +51,7 @@ class Image
                             $location_resize = "../img/foto_resize/" . $_FILES["file"]["name"];
 
                             if (R::count('photos', "location = ? ", array("img/foto_original/" . $_FILES["file"]["name"])) > 0) {
-                                $errors = $this->lang['add_image_errors'][0];
+                                $errors = $GLOBALS['lang']['add_image_errors'][0];
                             }
                             if (empty($errors)) {
 
@@ -129,19 +128,19 @@ class Image
                                 else $photos->hover_box_info = NULL;
                                 R::store($photos);
 
-                                $errors = $this->lang['add_image_errors'][1];
+                                $errors = $GLOBALS['lang']['add_image_errors'][1];
                             }
                             else $_SESSION['errors'] = $errors;
                         }
-                        else $errors = $this->lang['add_image_errors'][2];
+                        else $errors = $GLOBALS['lang']['add_image_errors'][2];
                     }
-                    else $errors = $this->lang['add_image_errors'][3];
+                    else $errors = $GLOBALS['lang']['add_image_errors'][3];
                 }
-                else $errors = $this->lang['add_image_errors'][4];
+                else $errors = $GLOBALS['lang']['add_image_errors'][4];
             }
-            else $errors = $this->lang['add_image_errors'][4];
+            else $errors = $GLOBALS['lang']['add_image_errors'][4];
         }
-        else $errors = $this->lang['add_image_errors'][5];
+        else $errors = $GLOBALS['lang']['add_image_errors'][5];
 
         return $errors;
     }

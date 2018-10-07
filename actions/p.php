@@ -88,7 +88,23 @@ elseif ($aAction['p'] == 'bedroom'){
     $keywords = 'спальні у Рівному, спальні на замовлення Рівне, меблі для спальні, меблі для спальні на замовлення, купить меблі для спальні, спальні у Рівному, спальні купить у Рівному, спальні виготовлення рівне, дерев\'яні спальні рівне, спальні гарнітури рівне, спальні рівне ціни';
     $description = 'У нас можна замовити будь-які меблі для спальні - двоспальне ліжко, комод, туалетний стіл і багато іншого можна купити для спальні у Рівному';
     $content = $smarty->fetch('templates/default_gallery.tpl');
-}else{
+}elseif ($aAction['p'] == 'send_message_async'){
+    $aSend = $oCommon->sendContactMessage();
+    $smarty->assign('aSend', $aSend);
+    $message = $smarty->fetch( 'templates/partial/mail_content.tpl' );
+   if(empty($aSend['error'])){
+       if(mail($aSend['to'],$aSend['subject'] , $message, $aSend['headers'])){
+           echo $GLOBALS['lang']['send_mail_communicate'][6];
+       }
+       else{
+           echo $GLOBALS['lang']['send_mail_communicate'][7];
+       }
+   }else{
+       echo $aSend['error'];
+   }
+   exit;
+}
+else{
 
     $smarty->assign('config', $config);
 

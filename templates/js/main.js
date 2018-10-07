@@ -153,85 +153,8 @@ $(document).ready(function() {
         }
 
     });
-    /*
-    send to server
-     */
-    $('#send_btn').click(function () {
-        var email = $('#email').val ();
-        var name = $('#name').val ();
-        var number = $('#number').val ();
-        var message = $('#message').val ();
-        $.ajax({
-            url:    	'../actions/send_mail.php',
-            type:		'POST',
-            cache: 		false,
-            data: {
-                'name':name,
-                'email':email,
-                'number': number ,
-                'message':message
-            },
-            dataType:	'html',
-            beforeSend: function () {
-                $('#send_btn').attr ("disabled", "disabled");
-            },
-            success: function(data) {
-                if (data == "Повідомлення надіслано)<br>Ми з вами зв'жемося") {
-                    $('#name').val ("");
-                    $('#email').val ("");
-                    $('#number').val("");
-                    $('#message').val ("");
-                    $('#success_msg').html(data);
-                    $('#err_number, #err_message, #err_email').html("");
-                    $('#email').css ("border-color", "#A5B3B1");
-                    $('#number').css ("border-color", "#A5B3B1");
-                    $('#name').css ("border-color", "#A5B3B1");
-                    $('#message').css ("border-color", "#A5B3B1");
-                    $('#send_btn').attr ("disabled", "disabled");
-                } else {
-                    if (data == false)
-                        $('#err_message').html(data);
-                    else {
-                        switch (data) {
-                            case "Ім'я не вказано":
-                                $('#name').css ("border-color", "#f70515");
-                                $('#err_name').html(data);
-                                $('#err_number, #err_email, #err_message').html("");
-                                break;
-                            case "Не вказано номер телефону":
-                                $('#number').css("border-color", "#f70515");
-                                $('#err_number').html(data);
-                                $('#err_name, #err_message,#err_email').html("");
-                                break;
-                            case "Не вірний номер телефону":
-                                $('#number').css("border-color", "#f70515");
-                                $('#err_number').html(data);
-                                $('#err_name, #err_message,#err_email').html("");
-                                break;
-                            case "Введіть своє повідомлення":
-                                $('#message').css ("border-color", "#f70515");
-                                $('#err_message').html(data);
-                                $('#err_name, #err_number,#err_email').html("");
-                                break;
-                            case "Не правильний емайл адрес":
-                                $('#email').css ("border-color", "#f70515");
-                                $('#err_email').html(data);
-                                $('#err_name, #err_number,#err_message').html("");
-                                break;
-                            default:
-                                $('#email').css ("border-color", "#f70515");
-                                $('#number').css ("border-color", "#f70515");
-                                $('#message').css ("border-color", "#f70515");
-                                $('#name').css ("border-color", "#f70515");
-                        }
-                    }
-                }
-            }
-        });
-    });
 
-
-    $("#login").click(function () {
+$("#login").click(function () {
         var login = $('#log_in').val ();
         var password = $('#password').val();
         $.ajax({

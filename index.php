@@ -3,10 +3,13 @@
 require_once 'libs/smarty/Smarty.class.php';
 require_once 'languages/lang_ua.php';
 include_once "classes/Image.php";
+include_once "classes/Common.php";
 require_once  'configure/config.php';
 
+$GLOBALS['lang'] = $lang;
 $smarty = new Smarty();
 $oImage = new Image();
+$oCommon = new Common();
 $error = null;
 
 $title = "";
