@@ -1,17 +1,17 @@
 <?php
+$aAction['p'] = ($_GET['p'] ?? "");
 
-if($_GET['p'] == 'home'){
-
+if($aAction['p'] == 'home'){
     $smarty->assign('config', $config);
 
     $content = $smarty->fetch('templates/main_page.tpl');
-}elseif ($_GET['p'] == 'gallery'){
+}elseif ($aAction['p'] == 'gallery'){
 
     $title = 'Виготовлення меблів для кухні на замовлення Рівне - West mebli';
     $keywords = 'кухні на замовлення рівне, кухні купить у Рівному, корпусні кухні рівне, корпусні кухні на замовлення у Рівному, виготовлення кухні на замовлення Рівне, виготовлення кухні у Рівному, замовити кухню у Рівному, кухні рівне';
     $description = 'Екзклюзивні кухні за власним дизайном. Виготовлення корпусних кухонь на замовлення в місті Рівному - Вест меблі';
 
-}elseif ($_GET['p'] == 'kitchen'){
+}elseif ($aAction['p'] == 'kitchen'){
 
     $aImages = $oImage->getImages($_GET['p']);
 
@@ -26,7 +26,7 @@ if($_GET['p'] == 'home'){
 
     $content = $smarty->fetch('templates/default_gallery.tpl');
 }
-elseif ($_GET['p'] == 'children'){
+elseif ($aAction['p'] == 'children'){
 
     $aImages = $oImage->getImages($_GET['p']);
     $smarty->assign('images', $aImages);
@@ -39,7 +39,7 @@ elseif ($_GET['p'] == 'children'){
 
     $content = $smarty->fetch('templates/default_gallery.tpl');
 }
-elseif ($_GET['p'] == 'cabinets'){
+elseif ($aAction['p'] == 'cabinets'){
 
     $aImages = $oImage->getImages($_GET['p']);
     $smarty->assign('images', $aImages);
@@ -52,7 +52,7 @@ elseif ($_GET['p'] == 'cabinets'){
 
     $content = $smarty->fetch('templates/default_gallery.tpl');
 }
-elseif ($_GET['p'] == 'office'){
+elseif ($aAction['p'] == 'office'){
 
     $aImages = $oImage->getImages($_GET['p']);
     $smarty->assign('images', $aImages);
@@ -64,7 +64,7 @@ elseif ($_GET['p'] == 'office'){
     $description = 'Офісні меблі за індивідуальним замовленням клієнта має багато переваг. Виготовлення меблів у місті Рівному - Вест меблі';
     $content = $smarty->fetch('templates/default_gallery.tpl');
 }
-elseif ($_GET['p'] == 'others'){
+elseif ($aAction['p'] == 'others'){
 
     $aImages = $oImage->getImages($_GET['p']);
     $smarty->assign('images', $aImages);
@@ -78,7 +78,7 @@ elseif ($_GET['p'] == 'others'){
                     комп\'ютерні столи, барні стійки, комоди, серванти, вітрини на замовлення у Рівному.';
     $content = $smarty->fetch('templates/default_gallery.tpl');
 }
-elseif ($_GET['p'] == 'bedroom'){
+elseif ($aAction['p'] == 'bedroom'){
 
     $aImages = $oImage->getImages($_GET['p']);
     $smarty->assign('images', $aImages);
@@ -88,4 +88,9 @@ elseif ($_GET['p'] == 'bedroom'){
     $keywords = 'спальні у Рівному, спальні на замовлення Рівне, меблі для спальні, меблі для спальні на замовлення, купить меблі для спальні, спальні у Рівному, спальні купить у Рівному, спальні виготовлення рівне, дерев\'яні спальні рівне, спальні гарнітури рівне, спальні рівне ціни';
     $description = 'У нас можна замовити будь-які меблі для спальні - двоспальне ліжко, комод, туалетний стіл і багато іншого можна купити для спальні у Рівному';
     $content = $smarty->fetch('templates/default_gallery.tpl');
+}else{
+
+    $smarty->assign('config', $config);
+
+    $content = $smarty->fetch('templates/main_page.tpl');
 }

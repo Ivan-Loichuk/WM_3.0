@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    {if $smarty.get.p != 'home'}
+    {if !empty($smarty.get.p) && $smarty.get.p != ''}
         <!-- bootstrap gallery -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
     {/if}
@@ -39,7 +39,7 @@
     <script src="{$config.templates_dir}/js/scripts.min.js"></script>
     <script src="{$config.templates_dir}/js/main.js"></script>
 
-    {if $smarty.get.p != 'home'}
+    {if !empty($smarty.get.p) && $smarty.get.p != ''}
         <script>
             $(document).ready(function () {
                 baguetteBox.run('.tz-gallery');

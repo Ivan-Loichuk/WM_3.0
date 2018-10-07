@@ -14,7 +14,7 @@
                 <div class="carousel-caption">
                     <h2>Ексклюзивні меблі на замовлення у місті Рівне</h2>
                     <p>Індивідуальний дизайн на Ваш смак</p>
-                    <a class="header__btn" href="bedroom.html" rel="nofollow noopener">Переглянути каталог</a>
+                    <a class="header__btn" href="mebli-dla-spalni" rel="nofollow noopener">Переглянути каталог</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -24,7 +24,7 @@
                 <div class="carousel-caption">
                     <h2>Сучасні рішення для Вашої кухні</h2>
                     <p>Наші спеціалісти допоможуть Вам вибрати найкраще рішення</p>
-                    <a class="header__btn" href="kitchen.html" rel="nofollow noopener">Переглянути каталог</a>
+                    <a class="header__btn" href="mebli-kuchenni" rel="nofollow noopener">Переглянути каталог</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -34,7 +34,7 @@
                 <div class="carousel-caption">
                     <h2>Меблі для дитячої кімнати</h2>
                     <p>Виготовлені нами меблі забезпечать комфорт та затишок Вашій дитині на довгі роки</p>
-                    <a class="header__btn" href="childrenroom.html" rel="nofollow noopener">Переглянути каталог</a>
+                    <a class="header__btn" href="mebli-w-dytiachu" rel="nofollow noopener">Переглянути каталог</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -44,7 +44,7 @@
                 <div class="carousel-caption">
                     <h2>Шафи купе з дизайнерським оформленням</h2>
                     <p>Виготовлені з якісного матеріалу та з чудовим виглядом</p>
-                    <a class="header__btn" href="wardrobe.html" rel="nofollow noopener">Переглянути каталог</a>
+                    <a class="header__btn" href="szafy-kupe" rel="nofollow noopener">Переглянути каталог</a>
                 </div>
             </div>
         </div>

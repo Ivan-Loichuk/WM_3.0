@@ -5,7 +5,7 @@ $_GET['type'] = "lang_ua";
 include_once '../languages/lang_ua.php';
 include_once "../configure/jandex_metrika.php";
 include_once("../configure/analyticstracking.php");
-$lang = new lang_ua();
+$lang = null;
 ?>
 <!DOCTYPE html>
 <html lang="uk-ua">

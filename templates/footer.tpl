@@ -32,27 +32,27 @@
                     </h4>
                     <ul class="navigation__items">
                         <li class="navigation__item">
-                            <a href="#">
+                            <a href="home">
                                 Головна
                             </a>
                         </li>
                         <li class="navigation__item">
-                            <a href="#">
+                            <a href="home#products">
                                 Каталог
                             </a>
                         </li>
                         <li class="navigation__item">
-                            <a href="#">
+                            <a href="home#orders">
                                 Як замовити
                             </a>
                         </li>
                         <li class="navigation__item">
-                            <a href="#">
+                            <a href="home#about">
                                 Про нас
                             </a>
                         </li>
                         <li class="navigation__item">
-                            <a href="#">
+                            <a href="home#contacts">
                                 Контакт
                             </a>
                         </li>

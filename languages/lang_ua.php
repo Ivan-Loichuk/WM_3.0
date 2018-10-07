@@ -173,40 +173,40 @@
 
         $lang['footer'] = array(
             0 => array(
-                'href' => "../korpusni-mebli-na-zamowlenia/szafy-kupe",
+                'href' => "szafy-kupe",
                 'title' => "Виготовлення шафи купе на замовлення м Рівне",
-                'a' => "Шафи-купе на замовлення Рівне"
+                'a' => "Шафи-купе"
             ),
             1 => array(
-                'href' => "../korpusni-mebli-na-zamowlenia/mebli-kuchenni",
+                'href' => "mebli-kuchenni",
                 'title' => "Виготовлення корпусних меблів для кухні на замовлення м Рівне",
-                'a' => "Кухні на замовлення Рівне"
+                'a' => "Кухні"
             ),
             2 => array(
-                'href' => "../korpusni-mebli-na-zamowlenia/stinki",
+                'href' => "stinki",
                 'title' => "Виготовлення стінок, комодів у Рівному",
-                'a' => "Стінки на замовлення Рівне"
+                'a' => "Стінки"
             ),
             3 => array(
-                'href' => "../korpusni-mebli-na-zamowlenia/mebli-w-dytiachu",
+                'href' => "mebli-w-dytiachu",
                 'title' => "Виготовлення корпусних меблів в дитячу кімнату",
-                'a' => "Дитячі меблі на замовлення Рівне"
+                'a' => "Дитячі"
             ),
             4 => array(
-                'href' => "../korpusni-mebli-na-zamowlenia/ofisni-mebli",
+                'href' => "ofisni-mebli",
                 'title' => "Замовлення офісних меблів у Рівному",
-                'a' => "Офісні меблі на замовлення Рівне"
+                'a' => "Офісні меблі"
             ),
             5 => array(
-                'href' => "../korpusni-mebli-na-zamowlenia/mebli-dla-spalni",
+                'href' => "mebli-dla-spalni",
                 'title' => "Меблі для спальної кімнати виготовлення Рівне",
-                'a' => "Спальні на замовлення Рівне"
+                'a' => "Спальні"
             ),
-            6 => array(
-                'href' => "../korpusni-mebli-na-zamowlenia/mebli-dla-spalni",
-                'title' => "Матраци купить у Рівному",
-                'a' => "Матраци у Рівному купить Рівне"
-            )
+//            6 => array(
+//                'href' => "../korpusni-mebli-na-zamowlenia/mebli-dla-spalni",
+//                'title' => "Матраци купить у Рівному",
+//                'a' => "Матраци у Рівному купить Рівне"
+//            )
         );
 
         $lang['gallery_main_title'] = "Галерея West-mebli - корпусні меблі на замовлення в місті Рівному";

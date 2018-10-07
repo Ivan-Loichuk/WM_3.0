@@ -5,13 +5,13 @@
                 <div class="category-wrap">
                     <h3>Категорії</h3>
                     <ul>
-                        <li><a href="?p=kitchen" {if $smarty.get.p == 'kitchen'}class="active"{/if}>Кухні</a></li>
-                        <li><a href="?p=children" {if $smarty.get.p == 'children'}class="active"{/if}>Дитячі кімнати</a></li>
-                        <li><a href="?p=bedroom" {if $smarty.get.p == 'bedroom'}class="active"{/if}>Спальні</a></li>
-                        <li><a href="?p=office" {if $smarty.get.p == 'office'}class="active"{/if}>Меблі для офісу</a></li>
-                        <li><a href="?p=cabinets" {if $smarty.get.p == 'cabinets'}class="active"{/if}>Шафи-купе</a></li>
-                        {*<li><a href="mattress.html">Матраци</a></li>*}
-                        <li><a href="?p=others" {if $smarty.get.p == 'others'}class="active"{/if}>Різне</a></li>
+                        <li><a href="mebli-kuchenni" {if $smarty.get.p == 'kitchen'}class="active"{/if}>Кухні</a></li>
+                        <li><a href="mebli-w-dytiachu" {if $smarty.get.p == 'children'}class="active"{/if}>Дитячі кімнати</a></li>
+                        <li><a href="mebli-dla-spalni" {if $smarty.get.p == 'bedroom'}class="active"{/if}>Спальні</a></li>
+                        <li><a href="ofisni-mebli" {if $smarty.get.p == 'office'}class="active"{/if}>Меблі для офісу</a></li>
+                        <li><a href="szafy-kupe" {if $smarty.get.p == 'cabinets'}class="active"{/if}>Шафи-купе</a></li>
+                        {*<li><a href="matrasy">Матраци</a></li>*}
+                        <li><a href="stinki" {if $smarty.get.p == 'others'}class="active"{/if}>Різне</a></li>
                     </ul>
                 </div>
                 <div class="links-block">

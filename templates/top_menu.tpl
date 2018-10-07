@@ -1,7 +1,7 @@
 <div class="menu">
     <nav class="navscroll navbar fixed-top navbar-expand-md navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="home">
                 <img src="{$config.templates_dir}/img/logo.png" width="145" height="50" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,19 +10,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto w-100 justify-content-center">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Головна <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="home">Головна <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#products">Каталог</a>
+                        <a class="nav-link" href="home#products">Каталог</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#orders">Як замовити</a>
+                        <a class="nav-link" href="home#orders">Як замовити</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">Про нас</a>
+                        <a class="nav-link" href="home#about">Про нас</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contacts">Контакт</a>
+                        <a class="nav-link" href="home#contacts">Контакт</a>
                     </li>
                 </ul>
             </div>

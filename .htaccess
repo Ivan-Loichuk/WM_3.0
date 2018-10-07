@@ -1,4 +1,4 @@
-DirectoryIndex php/index
+DirectoryIndex index
 ErrorDocument 404 /not-found.php
 
 AddDefaultCharset UTF-8
@@ -11,15 +11,15 @@ IndexIgnore *.php
 
 RewriteEngine On
 
-RewriteRule ^korpusni-mebli-na-zamowlenia?$ php/index.php [L]
-RewriteRule ^korpusni-mebli-na-zamowlenia/katalog?$ php/gallery_view.php [L]
-RewriteRule ^korpusni-mebli-na-zamowlenia/mebli-w-dytiachu?$ php/children.php?id=3 [L]
-RewriteRule ^korpusni-mebli-na-zamowlenia/mebli-kuchenni?$ php/kitchen.php?id=1 [L]
-RewriteRule ^korpusni-mebli-na-zamowlenia/matrasy?$ php/mattresses.php?id=6 [L]
-RewriteRule ^korpusni-mebli-na-zamowlenia/ofisni-mebli?$ php/office.php?id=5 [L]
-RewriteRule ^korpusni-mebli-na-zamowlenia/szafy-kupe?$ php/gabinets.php?id=0 [L]
-RewriteRule ^korpusni-mebli-na-zamowlenia/mebli-dla-spalni?$ php/bedroom.php?id=2 [L]
-RewriteRule ^korpusni-mebli-na-zamowlenia/stinki?$ php/other.php?id=4 [L]
+RewriteRule ^home?$ index.php [L]
+RewriteRule ^korpusni-mebli-na-zamowlenia?$ index.php?home [L]
+RewriteRule ^mebli-w-dytiachu?$ index.php?p=children [L]
+RewriteRule ^mebli-kuchenni?$ index.php?p=kitchen [L]
+RewriteRule ^matrasy?$ index.php?p=mattresses [L]
+RewriteRule ^ofisni-mebli?$ index.php?p=office [L]
+RewriteRule ^szafy-kupe?$ index.php?p=cabinets [L]
+RewriteRule ^mebli-dla-spalni?$ index.php?p=bedroom [L]
+RewriteRule ^stinki?$ index.php?p=others [L]
 
 ErrorDocument 404 http://west-mebli.com.ua/404.html
 ErrorDocument 403 http://west-mebli.com.ua/403.html
