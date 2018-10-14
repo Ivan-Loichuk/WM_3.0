@@ -29,7 +29,7 @@
 
     <link rel="stylesheet" href="{$config.templates_dir}/css/main.min.css">
 
-    <link rel="stylesheet" href="{$config.templates_dir}/css/style.min.css">
+    {*<link rel="stylesheet" href="{$config.templates_dir}/css/style.min.css">*}
     <link rel="shortcut icon" href="{$config.templates_dir}/img/shortcut_icon.png" type="image/x-icon">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>

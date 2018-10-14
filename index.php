@@ -1,9 +1,8 @@
 <?php
-
 require_once 'libs/smarty/Smarty.class.php';
 require_once 'languages/lang_ua.php';
-include_once "classes/Image.php";
-include_once "classes/Common.php";
+require_once "classes/Image.php";
+require_once "classes/Common.php";
 require_once  'configure/config.php';
 
 $GLOBALS['lang'] = $lang;

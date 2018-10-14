@@ -16,6 +16,7 @@ if($aAction['p'] == 'home'){
     $aImages = $oImage->getImages($_GET['p']);
 
     $smarty->assign('images', $aImages);
+    $smarty->assign('describe', $GLOBALS['lang']['kitchen_describe']);
     $smarty->assign('config', $config);
 
 
@@ -30,6 +31,7 @@ elseif ($aAction['p'] == 'children'){
 
     $aImages = $oImage->getImages($_GET['p']);
     $smarty->assign('images', $aImages);
+    $smarty->assign('describe', $GLOBALS['lang']['children_describe']);
     $smarty->assign('config', $config);
 
     $title = 'Виготовлення меблів в дитячу кімнату у Рівному - West-mebli';
@@ -43,6 +45,7 @@ elseif ($aAction['p'] == 'cabinets'){
 
     $aImages = $oImage->getImages($_GET['p']);
     $smarty->assign('images', $aImages);
+    $smarty->assign('describe', $GLOBALS['lang']['cabinets_describe']);
     $smarty->assign('config', $config);
 
     $title = 'Виготовлення шафи купе на замовлення у Рівному - West mebli';
@@ -56,6 +59,7 @@ elseif ($aAction['p'] == 'office'){
 
     $aImages = $oImage->getImages($_GET['p']);
     $smarty->assign('images', $aImages);
+    $smarty->assign('describe', $GLOBALS['lang']['office_describe']);
     $smarty->assign('config', $config);
 
     $title = 'Меблі для офісу на замовлення у Рівному - West mebli';
@@ -68,6 +72,7 @@ elseif ($aAction['p'] == 'others'){
 
     $aImages = $oImage->getImages($_GET['p']);
     $smarty->assign('images', $aImages);
+    $smarty->assign('describe', $GLOBALS['lang']['others_describe']);
     $smarty->assign('config', $config);
 
     $title = 'Комоди, серванти, столи, барні стійки на замовлення у Рівному';
@@ -82,6 +87,7 @@ elseif ($aAction['p'] == 'bedroom'){
 
     $aImages = $oImage->getImages($_GET['p']);
     $smarty->assign('images', $aImages);
+    $smarty->assign('describe', $GLOBALS['lang']['bedroom_describe']);
     $smarty->assign('config', $config);
 
     $title = 'Меблі для спальні на замовлення у Рівному - West-mebli';
@@ -90,6 +96,7 @@ elseif ($aAction['p'] == 'bedroom'){
     $content = $smarty->fetch('templates/default_gallery.tpl');
 }elseif ($aAction['p'] == 'send_message_async'){
     $aSend = $oCommon->sendContactMessage();
+    $smarty->assign('lang', $lang);
     $smarty->assign('aSend', $aSend);
     $message = $smarty->fetch( 'templates/partial/mail_content.tpl' );
    if(empty($aSend['error'])){
