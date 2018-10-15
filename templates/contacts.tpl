@@ -72,7 +72,7 @@
                     <input type="text" class="callback__input" name="user_email" placeholder="Ваш електронний адрес">
                     <input type="text" class="callback__input" name="user_number" placeholder="Ваш телефон">
                     <textarea class="callback__area" name="message" placeholder="Повідомлення.."></textarea>
-                    <span class="error" id="err_message"></span>
+                    <span class="error" id="err_message"></span><br>
                     <span class="success" id="success_msg"></span>
                     <button type="submit" class="button__act" id="send_btn">Замовити дзвінок</button>
                 </form>

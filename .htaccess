@@ -1,5 +1,5 @@
-DirectoryIndex index
-ErrorDocument 404 /not-found.php
+DirectoryIndex index.php
+#ErrorDocument 404 /not-found.php
 
 AddDefaultCharset UTF-8
 
@@ -7,7 +7,7 @@ Options -Indexes
 
 Options +MultiViews
 
-IndexIgnore *.php
+#IndexIgnore *.php
 
 RewriteEngine On
 
@@ -20,9 +20,16 @@ RewriteRule ^ofisni-mebli?$ index.php?p=office [L]
 RewriteRule ^szafy-kupe?$ index.php?p=cabinets [L]
 RewriteRule ^mebli-dla-spalni?$ index.php?p=bedroom [L]
 RewriteRule ^stinki?$ index.php?p=others [L]
+#RewriteRule ^korpusni-mebli-na-zamowlenia/szafy-kupe?$ szafy-kupe [L]
+RedirectMatch 301 /korpusni-mebli-na-zamowlenia/szafy-kupe$ /szafy-kupe
+RedirectMatch 301 /korpusni-mebli-na-zamowlenia/mebli-dla-spalni$ /mebli-dla-spalni
+RedirectMatch 301 /korpusni-mebli-na-zamowlenia/mebli-kuchenni$ /mebli-kuchenni
+RedirectMatch 301 /korpusni-mebli-na-zamowlenia/mebli-w-dytiachu$ /mebli-w-dytiachu
+RedirectMatch 301 /korpusni-mebli-na-zamowlenia/stinki$ /stinki
+RedirectMatch 301 /korpusni-mebli-na-zamowlenia/matrasy$ /home
 
-ErrorDocument 404 http://west-mebli.com.ua/404.html
-ErrorDocument 403 http://west-mebli.com.ua/403.html
+#ErrorDocument 404 http://west-mebli.com.ua/404.html
+#ErrorDocument 403 http://west-mebli.com.ua/403.html
 
 #
 # EXPIRES CACHING ##
