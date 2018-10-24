@@ -1,7 +1,10 @@
 <?php
 
-if($_GET['p'] == 'home'){
+if($_GET['p'] == 'category'){
+    //$smarty->assign('config', $config);
 
+    $smarty->assign('category', $oTraitList->getAllCategory());
+    $content = $smarty->fetch('templates/admin/category.tpl');
 
 }elseif ($_GET['p'] == 'add_image'){
 
@@ -14,6 +17,18 @@ if($_GET['p'] == 'home'){
 }elseif ( $_GET['p'] == 'delete_image' ){
     $oImage->deleteImage( $_POST['id'] );
 
-}else {
-    $error = "Bad request!!!";
+}elseif ( $_GET['p'] == "getImagesAsync"){
+
+    $aImages = $oImage->getImages($_POST['id']);
+    $smarty->assign('config', $config);
+    $smarty->assign('images', $aImages);
+
+    $smarty->display('templates/admin/image_list.tpl');
+    exit;
+}
+else {
+    //$smarty->assign('config', $config);
+
+    $smarty->assign('category', $oTraitList->getAllCategory());
+    $content = $smarty->fetch('templates/admin/category.tpl');
 }

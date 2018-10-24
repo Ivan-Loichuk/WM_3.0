@@ -4,7 +4,7 @@
  * Trait Trait_category_list
  * id to category name relation
  */
-    trait Trait_category_list {
+    class Trait_category_list {
 
         private $categoty_list = array(
             'cabinets' => 0,
@@ -15,4 +15,11 @@
             'office' => 5,
             'mattresses' => 6
         );
+
+        function getAllCategory(){
+            return $this->categoty_list;
+        }
+        function getCategory($id){
+            return $this->categoty_list[$id];
+        }
     }

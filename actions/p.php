@@ -1,5 +1,5 @@
 <?php
-$aAction['p'] = ($_GET['p'] ?? "");
+$aAction['p'] = (isset($_GET['p']) ?  $_GET['p'] : "");
 
 if($aAction['p'] == 'home'){
     $smarty->assign('config', $config);
@@ -13,7 +13,7 @@ if($aAction['p'] == 'home'){
 
 }elseif ($aAction['p'] == 'kitchen'){
 
-    $aImages = $oImage->getImages($_GET['p']);
+    $aImages = $oImage->getImages($oTraitList->getCategory($_GET['p']));
 
     $smarty->assign('images', $aImages);
     $smarty->assign('describe', $GLOBALS['lang']['kitchen_describe']);
@@ -29,7 +29,7 @@ if($aAction['p'] == 'home'){
 }
 elseif ($aAction['p'] == 'children'){
 
-    $aImages = $oImage->getImages($_GET['p']);
+    $aImages = $oImage->getImages($oTraitList->getCategory($_GET['p']));
     $smarty->assign('images', $aImages);
     $smarty->assign('describe', $GLOBALS['lang']['children_describe']);
     $smarty->assign('config', $config);
@@ -43,7 +43,7 @@ elseif ($aAction['p'] == 'children'){
 }
 elseif ($aAction['p'] == 'cabinets'){
 
-    $aImages = $oImage->getImages($_GET['p']);
+    $aImages = $oImage->getImages($oTraitList->getCategory($_GET['p']));
     $smarty->assign('images', $aImages);
     $smarty->assign('describe', $GLOBALS['lang']['cabinets_describe']);
     $smarty->assign('config', $config);
@@ -57,7 +57,7 @@ elseif ($aAction['p'] == 'cabinets'){
 }
 elseif ($aAction['p'] == 'office'){
 
-    $aImages = $oImage->getImages($_GET['p']);
+    $aImages = $oImage->getImages($oTraitList->getCategory($_GET['p']));
     $smarty->assign('images', $aImages);
     $smarty->assign('describe', $GLOBALS['lang']['office_describe']);
     $smarty->assign('config', $config);
@@ -70,7 +70,7 @@ elseif ($aAction['p'] == 'office'){
 }
 elseif ($aAction['p'] == 'others'){
 
-    $aImages = $oImage->getImages($_GET['p']);
+    $aImages = $oImage->getImages($oTraitList->getCategory($_GET['p']));
     $smarty->assign('images', $aImages);
     $smarty->assign('describe', $GLOBALS['lang']['others_describe']);
     $smarty->assign('config', $config);
@@ -85,7 +85,7 @@ elseif ($aAction['p'] == 'others'){
 }
 elseif ($aAction['p'] == 'bedroom'){
 
-    $aImages = $oImage->getImages($_GET['p']);
+    $aImages = $oImage->getImages($oTraitList->getCategory($_GET['p']));
     $smarty->assign('images', $aImages);
     $smarty->assign('describe', $GLOBALS['lang']['bedroom_describe']);
     $smarty->assign('config', $config);
@@ -101,7 +101,7 @@ elseif ($aAction['p'] == 'bedroom'){
     $message = $smarty->fetch( 'templates/partial/mail_content.tpl' );
    if(empty($aSend['error'])){
        if(mail($aSend['to'],$aSend['subject'] , $message, $aSend['headers'])){
-           echo $GLOBALS['lang']['send_mail_communicate'][6];
+           echo 1;
        }
        else{
            echo $GLOBALS['lang']['send_mail_communicate'][7];
@@ -110,8 +110,7 @@ elseif ($aAction['p'] == 'bedroom'){
        echo $aSend['error'];
    }
    exit;
-}
-else{
+}else{
 
     $smarty->assign('config', $config);
 

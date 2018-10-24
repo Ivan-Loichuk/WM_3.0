@@ -68,12 +68,12 @@
                 </h3>
                 <p class="callback_text">Залишіть свої дані й ми зв'яжемося з Вами</p>
                 <form class="callback__form" id="callback__form" >
-                    <input type="text" class="callback__input" name="user_name" placeholder="Ваше ім'я">
-                    <input type="text" class="callback__input" name="user_email" placeholder="Ваш електронний адрес">
-                    <input type="text" class="callback__input" name="user_number" placeholder="Ваш телефон">
-                    <textarea class="callback__area" name="message" placeholder="Повідомлення.."></textarea>
+                    <input type="text" class="callback__input" id="name" name="user_name" placeholder="Ваше ім'я">
+                    <input type="text" class="callback__input" id="email" name="user_email" placeholder="Ваш електронний адрес">
+                    <input type="text" class="callback__input" id="number" name="user_number" placeholder="Ваш телефон">
+                    <textarea class="callback__area" id="message" name="message" placeholder="Повідомлення.."></textarea>
                     <span class="error" id="err_message"></span><br>
-                    <span class="success" id="success_msg"></span>
+                    <span class="success" id="success_msg"></span><br>
                     <button type="submit" class="button__act" id="send_btn">Замовити дзвінок</button>
                 </form>
 
@@ -109,12 +109,13 @@
                     $('#send_btn').attr ("disabled", "disabled");
                 },
                 success: function(data) {
-                    if (data == "Повідомлення надіслано)<br>Ми з вами зв'жемося") {
+                    if (data == 1) {
                         name.val ("");
                         email.val ("");
                         number.val("");
                         message.val ("");
-                        $('#success_msg').html(data);
+                        $('#success_msg').css("color", "#c2ff0e");
+                        $('#success_msg').html("Повідомлення надіслано =)<br>Очікуйте дзвінок.");
                         $('#err_message').html("");
                         email.css("border-color", "#A5B3B1");
                         number.css("border-color", "#A5B3B1");

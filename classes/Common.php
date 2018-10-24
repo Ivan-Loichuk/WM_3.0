@@ -17,7 +17,7 @@ class Common
         $aSend['headers'] .= "Reply-To: contact@west-mebli.com.ua\r\n";
         $aSend['headers'] .= "CC: vanua.loichuk@gmail.com\r\n";
         $aSend['headers'] .= "MIME-Version: 1.0\r\n";
-        $aSend['headers'] .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        $aSend['headers'] .= "Content-Type: text/html; charset=utf-8\r\n";
         $aSend['headers'].= "Content-Transfer-Encoding: 8bit\n\n";
 
         $aSend['user_name'] = $_POST['name'];
@@ -40,7 +40,7 @@ class Common
         elseif (trim( $aSend['user_number']) == ""){
             $error = $GLOBALS['lang']['send_mail_communicate'][3];
         }
-        elseif (!preg_match('/[0-9]{9,13}/',  $aSend['user_number'])){
+        elseif (!preg_match('/[0-9]{9,16}/',  $aSend['user_number'])){
             $error = $GLOBALS['lang']['send_mail_communicate'][4];
         }
         elseif (trim( $aSend['user_message']) == ""){

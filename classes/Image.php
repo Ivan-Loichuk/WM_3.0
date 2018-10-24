@@ -1,15 +1,14 @@
 <?php
 include_once "configure/db.php";
-include_once "classes/Trait_category_list.php";
-include_once 'classes/Watermark.php';
+include_once "Trait_category_list.php";
+include_once 'Watermark.php';
 
 class Image
 {
-    use Trait_category_list;
-
     function getImages($id)
     {
-        $result = R::getAll("SELECT * FROM photos where id_kategorii = ". $this->categoty_list[$id] ." ORDER BY id DESC");
+        $oTraitList = new Trait_category_list;
+        $result = R::getAll("SELECT * FROM photos where id_kategorii = ". $id ." ORDER BY id DESC");
 
         if(empty($result) == true){
             echo "Галерея пуста!! <br>Вибачте за тимчасові незручності =)";
@@ -36,6 +35,7 @@ class Image
 
         return $group_result;
     }
+
     function addImage( $data ){
         $errors = null;
         $type = null;
