@@ -1,7 +1,7 @@
 <?php
+$_GET['p'] = (isset($_GET['p']) ?  $_GET['p'] : "");
 
 if($_GET['p'] == 'category'){
-    //$smarty->assign('config', $config);
 
     $smarty->assign('category', $oTraitList->getAllCategory());
     $content = $smarty->fetch('templates/admin/category.tpl');
@@ -25,10 +25,19 @@ if($_GET['p'] == 'category'){
 
     $smarty->display('templates/admin/image_list.tpl');
     exit;
+}elseif ($_GET['p'] == "login"){
+    if($oCommon->login()){
+        header('Location: admin.php');
+    }
+    $content = $smarty->fetch('templates/admin/login.tpl');
+}
+elseif ($_GET['p'] == "logout"){
+    $oCommon->logout();
+}elseif ($_GET['p'] == "delete_image_async"){
+    $oImage->deleteImage($_POST['id']);
+    exit;
 }
 else {
-    //$smarty->assign('config', $config);
-
     $smarty->assign('category', $oTraitList->getAllCategory());
     $content = $smarty->fetch('templates/admin/category.tpl');
 }

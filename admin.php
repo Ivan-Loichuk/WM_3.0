@@ -1,18 +1,23 @@
 <?php
 #ini_set('display_errors', 1);
-require_once 'libs/smarty/Smarty.class.php';
-require_once 'languages/lang_ua.php';
-include_once "classes/Image.php";
-require_once  'configure/config.php';
-include_once "classes/Trait_category_list.php";
 
+require 'configure/config_loader.php';
+
+$GLOBALS['config'] = $config;
 $smarty = new Smarty();
 $oImage = new Image();
+$oCommon = new Common();
 $error = null;
 $oTraitList = new Trait_category_list;
 $content = "";
+isset($_COOKIE['error_message']) ? ($_COOKIE['error_message'] = null) : "";
 
 require 'actions/p_admin.php';
+if(!isset($_SESSION['logged_user'])){
+    return $smarty->display('templates/admin/login.tpl');
+}
+
+
 
 
 //$smarty->assign('images', $aImages);

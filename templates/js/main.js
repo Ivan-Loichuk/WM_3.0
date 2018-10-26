@@ -135,31 +135,6 @@ $("#login").click(function () {
 
 });
 
-
-
-/*
-    get image from server to gallery
- */
-function getContent(id){
-    var tab_content = document.getElementById('tab-content');
-    tab_content.innerHTML = '<div class="loading_gif"><img src="img/loading.gif" /> </div>';
-
-    $.ajax({
-        url: "../actions/get_img_gallery.php",
-        data:'id='+id,
-        type: "POST",
-        success:function(data){
-
-            if(data == 0){
-                tab_content.innerHTML = "Галерея пуста!!  Вибачте за тимчасові незручності =)";
-            }
-            else {
-                tab_content.innerHTML = data;
-                initBoxModal();
-            }
-        }
-    });
-}
 /*
      delete image from galery
  */

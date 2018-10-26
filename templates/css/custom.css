@@ -83,7 +83,7 @@ min-height: 80px;
 .logout-spn {
     float:right;
     color:#fff;
-    font-size:25px;
+    font-size:18px;
     font-weight:800;
     margin:20px;
     margin: 10px 25px 10px 50px;
@@ -138,29 +138,70 @@ min-height: 80px;
     text-align: start;
     width: 98%;
 }
-#main .category_list li{
-    padding: 5px;
-    padding-left: 10px;
-    border-radius: 3px;
-    border: 1px solid #c5c4bf;
-    margin: 5px;
-}
-
-#main .category_list li:nth-child(even) {
-    background: #cdd2d4;
-}
-#main .category_list li:hover{
-     background-color: #214761;
-     color: white;
+.category_list a{
     cursor: pointer;
 }
+.category_list a.active, .category_list a.active:hover{
+    color: white;
+}
+
+#main .list-group a{
+    text-align: start;
+}
+
 .category_list li{
     cursor: pointer;
 }
 .category_list li:hover{
     color:#0000fe;
 }
+.adjust-nav{
+    width: 100%;
+}
 
+.card {
+    position: relative;
+    display: inline-block;
+}
+
+.card:hover .delete {
+    display: block;
+}
+
+.delete {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    display: none;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.add_image_btn{
+    width: 100%;
+}
+
+.delete a {
+    color: #000;
+}
+.delete i{
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+}
+.card:hover .overlay {
+    display: block;
+    background: rgba(0, 0, 0, .3);
+}
 /*==============================================
     MEDIA QUERIES     
     =============================================*/

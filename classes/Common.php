@@ -5,6 +5,7 @@
  * Date: 07.10.2018
  * Time: 14:47
  */
+include_once "configure/db.php";
 
 class Common
 {
@@ -50,5 +51,25 @@ class Common
         $aSend['error'] = $error;
 
         return $aSend;
+    }
+
+    function login(){
+        if( isset($_POST['login']) && !empty($_POST['login'])){
+            if(isset($_POST['password']) && !empty($_POST['password'])) {
+                $user = R::findOne('users', 'login = ?', array($_POST['login']));
+                if ($user) {
+                    if (md5($_REQUEST['password']) == $user->password) {
+                        $_SESSION['logged_user'] = $user->login;
+                        return 1;
+                    } else { $_COOKIE['error_message'] = "Incorrect password"; }
+                } else { $_COOKIE['error_message'] = "No users found";}
+            } else $_COOKIE['error_message'] = "Please enter password";
+        }else $_COOKIE['error_message'] = "Please enter login";
+
+        unset($_SESSION['logged_user']);
+        return 0;
+    }
+    function logout(){
+        unset($_SESSION['logged_user']);
     }
 }

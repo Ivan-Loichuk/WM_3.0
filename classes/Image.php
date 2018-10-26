@@ -150,14 +150,16 @@ class Image
         $result = R::getAll("SELECT * FROM photos where id=".$deleteItem);
         if(isset($result)) {
             foreach ($result as $row) {
-                unlink('../' . $row['location']);
-                unlink('../' . $row['location_mini']);
-                unlink('../' . $row['location_resize']);
+                unlink($GLOBALS['config']['templates_dir'] . "/" . $row['location']);
+                unlink($GLOBALS['config']['templates_dir'] . "/" . $row['location_mini']);
+                unlink($GLOBALS['config']['templates_dir'] . "/" . $row['location_resize']);
             }
             $result = R::getAll("DELETE  FROM photos WHERE id=" . $deleteItem);
+
+            return 0;
         }
 
-        return 0;
+        return 1;
     }
 
 }

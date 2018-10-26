@@ -1,14 +1,10 @@
 <?php
 
-require_once 'libs/smarty/Smarty.class.php';
-require_once 'languages/lang_ua.php';
-require_once "classes/Image.php";
-require_once "classes/Common.php";
-require_once  'configure/config.php';
-include_once "classes/Trait_category_list.php";
+require "configure/config_loader.php";
 
 #ini_set('display_errors', 1);
 $GLOBALS['lang'] = $lang;
+$GLOBALS['config'] = $config;
 $smarty = new Smarty();
 $oImage = new Image();
 $oCommon = new Common();
