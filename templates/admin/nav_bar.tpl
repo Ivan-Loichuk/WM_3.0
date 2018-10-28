@@ -7,10 +7,6 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-
-        <span class="logout-spn" >
-            <a href="admin.php?p=logout" style="color:#fff;">Logout</a>
-        </span>
     </div>
 </div>
 

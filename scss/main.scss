@@ -765,3 +765,18 @@ a.button
     font-size: 14px;
 }
 @import 'media'; // Always at the end
+
+@media (max-width: 760px) {
+    .category-wrap {
+        width: 60%;
+        text-align: center;
+        margin: 0 20%;
+    }
+}
+@media (max-width: 480px) {
+    .category-wrap {
+        width: 80%;
+        text-align: center;
+        margin: 0 10%;
+    }
+}

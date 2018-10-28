@@ -64,13 +64,13 @@
             </div>
             <div class="modal-body">
                 <form action="admin.php?p=addImage" method="POST" id="add-image-form" enctype="multipart/form-data">
-                    <div class="form-row">
-                        <div class="col">
-                            <label for="image_file">Select image</label>
-                            <input type="file" name="file" class="ed form-control-file" id="image_file">
-                        </div>
-                        <div class="col">
-                            <div class="form-check">
+                    <div class="form-row container">
+                        <div class="row">
+                            <div class="col-sm" style="padding-left: 0px;">
+                                <label for="image_file">Select image</label>
+                                <input type="file" name="file" class="ed form-control-file" id="image_file">
+                            </div>
+                            <div class="col-sm" style="padding-left: 0px;">
                                 <label class="form-check-label" for="watermark" style="margin: 30px 15px 0px 0px;">
                                     Додати водяний знак
                                 </label>

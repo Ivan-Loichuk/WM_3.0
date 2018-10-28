@@ -90,5 +90,19 @@
     }
     .back { text-align: left; margin-top:10px;}
     .back a {color: #444444; font-size: 13px;text-decoration: none;}
+
+    @media(max-width:1200px) {
+        .main-div {
+            max-width: 60%;
+        }
+    }
+    @media(max-width:760px) {
+        .main-div {
+            max-width: 100%;
+            padding: 40px 30px 10px 30px;
+        }
+    }
+
+
 </style>
 {/literal}

@@ -67,7 +67,7 @@ font-size: 16px;
 .navbar-side {
 	border:none;
 	background-color: #fff;
-	
+    padding-top: 15px;
 }
 .navbar-inverse {
 
