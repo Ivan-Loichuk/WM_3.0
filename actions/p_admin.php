@@ -35,6 +35,7 @@ elseif ($_GET['p'] == "logout"){
 
     $smarty->assign('lang', $GLOBALS['lang']);
     $smarty->assign('category', $oTraitList->getAllCategory());
+    $smarty->assign('t_category', $oTraitList->getTranslatedCategory());
     $aImages = $oImage->getImages($oTraitList->getCategory($_GET['p']));
     $smarty->assign('config', $config);
     $smarty->assign('images', $aImages);
@@ -43,7 +44,5 @@ elseif ($_GET['p'] == "logout"){
     $content = $smarty->fetch('templates/admin/image_list.tpl');
 }
 else{
-    $smarty->assign('lang', $GLOBALS['lang']);
-    $smarty->assign('category', $oTraitList->getAllCategory());
-    $content = "";
+    header('Location: admin.php?p=cabinets');
 }

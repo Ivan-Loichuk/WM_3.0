@@ -68,7 +68,7 @@
                         <div class="row">
                             <div class="col-sm" style="padding-left: 0px;">
                                 <label for="image_file">Select image</label>
-                                <input type="file" name="file" class="ed form-control-file" id="image_file">
+                                <input type="file" name="file" class="ed form-control-file" id="image_file" accept="image/x-png,image/gif,image/jpeg,image/*">
                             </div>
                             <div class="col-sm" style="padding-left: 0px;">
                                 <label class="form-check-label" for="watermark" style="margin: 30px 15px 0px 0px;">
@@ -89,8 +89,8 @@
                     <div class="form-group">
                         <label for="image_category">Додати до:</label>
                         <select class="form-control" id="image_category" name="img_category">
-                            {foreach from=$category key=k item=cat}
-                                <option value="{$cat}" {if $cat == 0}selected="selected"{/if}>{$k}</option>
+                            {foreach from=$t_category key=k item=cat}
+                                <option value="{$k}" {if $k == 0}selected="selected"{/if}>{$cat|upper}</option>
                             {/foreach}
                         </select>
                     </div>

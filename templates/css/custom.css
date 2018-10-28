@@ -213,16 +213,16 @@ min-height: 80px;
         min-height: 1050px;
 		
     }
-	
-	
     .navbar-side {
         z-index: 1;
         position: absolute;
         width: 260px;
        
     }
-
- 
 }
-
+@media(max-width:780px) {
+    #main{
+        margin-left: 10px;
+    }
+}
 

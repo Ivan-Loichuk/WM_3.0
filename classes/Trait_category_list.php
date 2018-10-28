@@ -12,8 +12,15 @@
             'bedroom' => 2,
             'children' => 3,
             'others' => 4,
-            'office' => 5,
-            'mattresses' => 6
+            'office' => 5
+        );
+        private $t_category_list = array(
+            0 => 'шафи-купе',
+            1 => 'кухні',
+            2 => 'спальні',
+            3 => 'дитячі кімнати',
+            4 => 'різне',
+            5 => 'офісні меблі',
         );
 
         function getAllCategory(){
@@ -22,4 +29,9 @@
         function getCategory($id){
             return $this->categoty_list[$id];
         }
+
+        function getTranslatedCategory(){
+            return $this->t_category_list;
+        }
+
     }

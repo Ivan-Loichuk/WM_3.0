@@ -1,6 +1,5 @@
 
 $(document).ready(function() {
-
 /* add image modal window */
     $(".modal-trigger").click(function(e){
         e.preventDefault();
@@ -15,31 +14,25 @@ $(document).ready(function() {
 /* add image form - save value  */
     var selCategory = sessionStorage.getItem("SelItem");
     if(selCategory != null){
-       $('#img_category').val(selCategory);
+       $('#image_category').val(selCategory);
     }
     var nameInput = sessionStorage.getItem("name");
     var altInput = sessionStorage.getItem("alt");
-    var hover_box_info_input = sessionStorage.getItem("hover_box_info");
 
-    $('#img_name').val(nameInput);
-    $('#img_alt').val(altInput);
-    $('#img_hover_box_info').val(hover_box_info_input);
+    $('#image_name').val(nameInput);
+    $('#image_alt').val(altInput);
 
-    $('#img_category').change(function() {
+    $('#image_category').change(function() {
         var selVal = $(this).val();
         sessionStorage.setItem("SelItem", selVal);
     });
-    $('#img_name').change(function () {
+    $('#image_name').change(function () {
         var selVal = $(this).val();
         sessionStorage.setItem("name", selVal);
     });
-    $('#img_alt').change(function () {
+    $('#image_alt').change(function () {
         var selVal = $(this).val();
         sessionStorage.setItem("alt", selVal);
-    });
-    $('#img_hover_box_info').change(function () {
-        var selVal = $(this).val();
-        sessionStorage.setItem("hover_box_info", selVal);
     });
 
 //Callback form

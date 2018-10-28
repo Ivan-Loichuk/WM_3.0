@@ -18,7 +18,7 @@
                 <a href="index.html" ><i class="fa fa-desktop "></i>Категорії</a>
                 <div class="list-group category_list">
                     {foreach from=$category key=k item=cat}
-                        <a href="admin.php?p={$k}" data-id="{$cat}" class="list-group-item {if $smarty.get.p == {$k}}active{/if}">{$k}</a>
+                        <a href="admin.php?p={$k}" data-id="{$cat}" class="list-group-item {if $smarty.get.p == {$k}}active{/if}">{$t_category[$cat]|upper}</a>
                     {/foreach}
                 </div>
             </li>

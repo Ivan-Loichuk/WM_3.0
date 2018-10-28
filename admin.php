@@ -22,6 +22,7 @@ if(!isset($_SESSION['logged_user'])){
 
 
 //$smarty->assign('images', $aImages);
+$smarty->assign('t_category', $oTraitList->getTranslatedCategory());
 $smarty->assign('category', $oTraitList->getAllCategory());
 $smarty->assign('config', $config);
 $smarty->assign('content', $content);

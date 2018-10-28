@@ -27,5 +27,6 @@
     <script src="templates/js/bootstrap.min.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="templates/js/custom.js"></script>
+    <script src="templates/js/main.js"></script>
 </head>
 </html>

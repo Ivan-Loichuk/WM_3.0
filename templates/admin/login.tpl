@@ -1,5 +1,6 @@
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
@@ -14,7 +15,7 @@
             </div>
             <form id="Login" action="admin.php?p=login" method="post">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="Email Address" name="login">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="Login" name="login">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
