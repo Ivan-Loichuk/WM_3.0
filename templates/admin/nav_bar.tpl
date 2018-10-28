@@ -22,41 +22,10 @@
                 <a href="index.html" ><i class="fa fa-desktop "></i>Категорії</a>
                 <div class="list-group category_list">
                     {foreach from=$category key=k item=cat}
-                        <a data-id="{$cat}" class="list-group-item">{$k}</a>
+                        <a href="admin.php?p={$k}" data-id="{$cat}" class="list-group-item {if $smarty.get.p == {$k}}active{/if}">{$k}</a>
                     {/foreach}
                 </div>
             </li>
         </ul>
     </div>
 </nav>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.category_list').find('a').each(function() {
-            $(this).on('click', function () {
-                $(this).data("id");
-                $('.category_list').find('a').each(function() {
-                     if($(this).hasClass('active')){
-                         $(this).removeClass('active');
-                     }
-                });
-                $(this).addClass('active');
-                $.ajax({
-                    url:    	'admin.php?p=getImagesAsync',
-                    type:		'POST',
-                    cache: 		false,
-                    data: {
-                        'id': $(this).data("id")
-                    },
-                    dataType:	'html',
-                    beforeSend: function () {
-
-                    },
-                    success: function(data) {
-                        $('#main').html(data);
-                    }
-                });
-            });
-        });
-    });
-</script>

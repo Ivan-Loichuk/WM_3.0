@@ -46,9 +46,9 @@ class Image
                     if ($_FILES['file']['size'] < 5000000) {
                         if(isset($data['img_category'])){
 
-                            $location = "../img/foto_original/" . $_FILES["file"]["name"];
-                            $location_mini = "../img/miniaturki/mini-" . $_FILES["file"]["name"];
-                            $location_resize = "../img/foto_resize/" . $_FILES["file"]["name"];
+                            $location = $GLOBALS['config']['templates_dir'] . "/img/foto_original/" . $_FILES["file"]["name"];
+                            $location_mini = $GLOBALS['config']['templates_dir'] . "/img/miniaturki/mini-" . $_FILES["file"]["name"];
+                            $location_resize = $GLOBALS['config']['templates_dir'] . "/img/foto_resize/" . $_FILES["file"]["name"];
 
                             if (R::count('photos', "location = ? ", array("img/foto_original/" . $_FILES["file"]["name"])) > 0) {
                                 $errors = $GLOBALS['lang']['add_image_errors'][0];
@@ -58,7 +58,7 @@ class Image
                                 $file = $_FILES['file']['tmp_name'];
                                 $image = addslashes(file_get_contents($_FILES['file']['tmp_name']));
                                 $image_name = addslashes($_FILES['file']['name']);
-                                move_uploaded_file($file, "../img/foto_original/" . $image_name);
+                                move_uploaded_file($file, $GLOBALS['config']['templates_dir']  . "/img/foto_original/" . $image_name);
 
                                 list($width, $height) = getimagesize($location);
                                 if($width > 5470 || $height > 3640){
@@ -93,7 +93,7 @@ class Image
                                 imagejpeg($thumb, $location_resize, 70);
 
                                 $nowe = imagecreatetruecolor(430, 270);
-                                $list = list($width, $height, $type, $attr) = getimagesize("../img/foto_original/" . $image_name);
+                                $list = list($width, $height, $type, $attr) = getimagesize($GLOBALS['config']['templates_dir'] . "/img/foto_original/" . $image_name);
                                 $obraz = imagecreatefromjpeg($location);
 
                                 if ($width > $height) {
@@ -106,7 +106,7 @@ class Image
 
                                 if(isset($data['watermark'])) {
                                     $watermark = Watermark::getInstance();
-                                    $watermark->addWatermark($location_resize, '../img/watermark.png', 'br', null);
+                                    $watermark->addWatermark($location_resize, $GLOBALS['config']['templates_dir'] . '/img/watermark.png', 'br', null);
                                 }
                                 $location = "img/foto_original/" . $_FILES["file"]["name"];
                                 $location_resize = "img/foto_resize/" . $_FILES["file"]["name"];
@@ -120,15 +120,12 @@ class Image
                                 $photos->name_photo = $data['name'];
                                 $photos->alt = $data['alt'];
                                 $photos->id_kategorii = $data['img_category'];
-                                $photos->redirect_page_link = $data['redirect_page_link'];
+                                $photos->redirect_page_link = "";
+                                $photos->hover_box_info = "";
 
-                                if(trim($data['hover_box_info']) != "") {
-                                    $photos->hover_box_info = $data['hover_box_info'];
-                                }
-                                else $photos->hover_box_info = NULL;
                                 R::store($photos);
 
-                                $errors = $GLOBALS['lang']['add_image_errors'][1];
+                                $errors = 0;
                             }
                             else $_SESSION['errors'] = $errors;
                         }

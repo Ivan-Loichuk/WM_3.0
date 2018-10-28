@@ -44,6 +44,10 @@
 
     $(document).ready(function () {
         mainApp.main_fun();
+        setTimeout(function(){
+            $("#success-alert").slideUp(500);
+            $("#danger-alert").slideUp(500);
+        }, 5000);
     });
 
 }(jQuery));

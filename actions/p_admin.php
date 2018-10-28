@@ -1,19 +1,14 @@
 <?php
 $_GET['p'] = (isset($_GET['p']) ?  $_GET['p'] : "");
 
-if($_GET['p'] == 'category'){
-
-    $smarty->assign('category', $oTraitList->getAllCategory());
-    $content = $smarty->fetch('templates/admin/category.tpl');
-
-}elseif ($_GET['p'] == 'add_image'){
-
+if($_GET['p'] == 'addImage'){
     if( isset( $_POST['submit']) ){
+        $_SESSION['errors'] = null;
         $errors = $oImage->addImage( $_POST );
         $_SESSION['errors'] = $errors;
     }
-
-    //header('Location: ../korpusni-mebli-na-zamowlenia/katalog?type='.$type);
+    $category = array_flip($oTraitList->getAllCategory());
+    header('Location: admin.php?p='. $category[$_POST['img_category']]);
 }elseif ( $_GET['p'] == 'delete_image' ){
     $oImage->deleteImage( $_POST['id'] );
 
@@ -27,7 +22,7 @@ if($_GET['p'] == 'category'){
     exit;
 }elseif ($_GET['p'] == "login"){
     if($oCommon->login()){
-        header('Location: admin.php');
+        header('Location: admin.php?p=cabinets');
     }
     $content = $smarty->fetch('templates/admin/login.tpl');
 }
@@ -36,8 +31,19 @@ elseif ($_GET['p'] == "logout"){
 }elseif ($_GET['p'] == "delete_image_async"){
     $oImage->deleteImage($_POST['id']);
     exit;
-}
-else {
+}elseif( array_key_exists($_GET['p'], $oTraitList->getAllCategory())){
+
+    $smarty->assign('lang', $GLOBALS['lang']);
     $smarty->assign('category', $oTraitList->getAllCategory());
-    $content = $smarty->fetch('templates/admin/category.tpl');
+    $aImages = $oImage->getImages($oTraitList->getCategory($_GET['p']));
+    $smarty->assign('config', $config);
+    $smarty->assign('images', $aImages);
+    $smarty->assign('errors', isset($_SESSION['errors']) ? $_SESSION['errors'] : null);
+    unset($_SESSION['errors']);
+    $content = $smarty->fetch('templates/admin/image_list.tpl');
+}
+else{
+    $smarty->assign('lang', $GLOBALS['lang']);
+    $smarty->assign('category', $oTraitList->getAllCategory());
+    $content = "";
 }
